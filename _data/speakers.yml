@@ -8,21 +8,19 @@
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Lea Duncker"
   affiliation: "Columbia Univ"
+  image: lea_duncker.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Luca Mazzucato"
   affiliation: "Oregon"
   image: luca_mazzucato.jpg
   # bio: add a sentence or two here, and the card becomes clickable
-- name: "Ulysses Pereira"
+- name: "Ulises Pereira"
   affiliation: "Allen"
-  image: ulysses_pereira.jpg
+  image: ulises_pereira.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Yonathan Aljadeff"
   affiliation: "UCSD"
   image: yonathan_aljadeff.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Claudia Clopath"
-  affiliation: "Kings College"
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Sadra Sadeh"
   affiliation: "Crick"
@@ -32,9 +30,9 @@
   affiliation: "Duke"
   image: eva_naumann.jpg
   # bio: add a sentence or two here, and the card becomes clickable
-- name: "Svoboda Karel"
+- name: "Karel Svoboda"
   affiliation: "Allen"
-  image: svoboda_karel.jpg
+  image: karel_svoboda.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Dima Rinberg"
   affiliation: "NYU"
@@ -42,6 +40,7 @@
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Valentina Emiliani"
   affiliation: "Vision Institute"
+  image: valentina_emiliani.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Ian Oldenburg"
   affiliation: "Rutgers"
@@ -55,9 +54,9 @@
   affiliation: "Berkeley"
   image: hillel_adesnik.jpg
   # bio: add a sentence or two here, and the card becomes clickable
-- name: "Edward Moser"
+- name: "Edvard Moser"
   affiliation: ""
-  image: edward_moser.jpg
+  image: edvard_moser.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Kayvon Daie"
   affiliation: "Allen"
