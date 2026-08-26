@@ -44,6 +44,7 @@ IMAGES = {
     "Arseny Finkelstein": "arseny-finkelstein.jpg",    # english.tau.ac.il
     "Tatiana Engel": "tatiana-engel.jpg",              # simonsfoundation.org
     "Vivek Jayaraman": "vivek-jayaraman.jpg",          # janelia.org
+    "Rossa Cossart": "rossa-cossart.jpg",              # sfari.org (she spells it Rosa)
 }
 
 
@@ -110,7 +111,9 @@ def main():
     confirmed = [p for p in people if p["confirmed"]]
 
     organizers = [p for p in confirmed if p["section"] == "organizers"]
-    keynotes = [p for p in confirmed if p["section"] == "keynote"]
+    # Keynotes are listed whether or not the sheet records a reply — Agostina's
+    # call on 26 August 2026. Everyone else still has to have confirmed.
+    keynotes = [p for p in people if p["section"] == "keynote"]
     invited = [p for p in confirmed if p["section"] == "invited"]
     (ROOT / "_data" / "organizers.yml").write_text(
         render(organizers, "Organisers."), encoding="utf-8")
@@ -122,7 +125,8 @@ def main():
     print(f"published {len(organizers)} organisers, {len(keynotes)} keynotes, "
           f"{len(invited)} invited speakers")
 
-    outstanding = [p for p in people if not p["confirmed"] and p["section"] != "attendees"]
+    outstanding = [p for p in people
+                   if not p["confirmed"] and p["section"] not in ("attendees", "keynote")]
     print(f"held back (not confirmed): {len(outstanding)}")
     if args.all:
         for person in outstanding:

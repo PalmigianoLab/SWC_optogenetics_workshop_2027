@@ -21,6 +21,8 @@ workshop:
   address: 25 Howland Street, London W1T 4JG
   apply_label: Apply now
 
+noindex: true   # while the site is still a draft
+
 plugins:
   - jekyll-sitemap
 
