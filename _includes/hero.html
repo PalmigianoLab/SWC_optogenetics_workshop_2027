@@ -1,0 +1,26 @@
+<section class="hero" id="top">
+  <div class="hero__art" aria-hidden="true"></div>
+
+  <div class="hero__card">
+    <p class="eyebrow">{{ site.workshop.dates }} · {{ site.workshop.location }}</p>
+    <h1>{{ site.title }}</h1>
+    <p class="hero__tagline">{{ site.tagline }}</p>
+    <div class="hero__meta">
+      <span><a href="{{ site.workshop.venue_url }}">{{ site.workshop.venue }}</a></span>
+      <span class="dot">·</span>
+      <span>Applications close {{ site.workshop.deadline }}</span>
+    </div>
+    <a class="btn" href="{{ site.workshop.apply_url }}">{{ site.workshop.apply_label }}</a>
+  </div>
+
+  <div class="counters">
+    <div class="counter" data-deadline="{{ site.workshop.deadline_iso }}">
+      <p class="counter__label">Applications close in</p>
+      <p class="counter__value">—</p>
+    </div>
+    <div class="counter" data-deadline="{{ site.workshop.start_iso }}">
+      <p class="counter__label">Workshop begins in</p>
+      <p class="counter__value">—</p>
+    </div>
+  </div>
+</section>

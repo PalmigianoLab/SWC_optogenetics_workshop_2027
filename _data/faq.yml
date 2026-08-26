@@ -1,0 +1,16 @@
+- group: General
+  items:
+    - q: Who is the workshop for?
+      a: >-
+        Replace with the real answer. Keep answers to a few sentences; anything
+        longer belongs on its own page.
+    - q: Is there a registration fee?
+      a: Replace with the real answer.
+    - q: Is accommodation provided?
+      a: Replace with the real answer.
+- group: Application
+  items:
+    - q: What do I need to submit?
+      a: Replace with the real answer.
+    - q: When will I hear back?
+      a: Replace with the real answer.

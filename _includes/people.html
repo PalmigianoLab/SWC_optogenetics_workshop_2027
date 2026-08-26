@@ -1,0 +1,58 @@
+{% comment %}
+  Shared grid for speakers and organisers. A person with a `bio` becomes a
+  button that opens a panel; without one the card is inert.
+{% endcomment %}
+<div class="people{% if include.centred %} people--center{% endif %}">
+  {% for person in include.people %}
+    {% assign slug = person.name | slugify %}
+    {% assign uid = include.id | append: '-' | append: slug %}
+    {% if person.bio %}
+      <button class="person person--clickable" data-opens="dialog-{{ uid }}" aria-haspopup="dialog">
+    {% else %}
+      <div class="person">
+    {% endif %}
+      <div class="person__portrait">
+        {% if person.image %}
+          <img src="{{ person.image | prepend: '/assets/img/' | relative_url }}" alt="" loading="lazy">
+        {% else %}
+          <span class="person__initials" aria-hidden="true">
+            {%- assign parts = person.name | split: ' ' -%}
+            {{- parts.first | slice: 0 }}{{ parts.last | slice: 0 -}}
+          </span>
+        {% endif %}
+      </div>
+      {% if person.keynote %}<span class="person__tag">Keynote</span>{% endif %}
+      <span class="person__name">{{ person.name }}</span>
+      <span class="person__affiliation">{{ person.affiliation }}</span>
+      {% if person.bio %}<span class="person__more">Read more</span>{% endif %}
+    {% if person.bio %}</button>{% else %}</div>{% endif %}
+  {% endfor %}
+</div>
+
+{% for person in include.people %}
+  {% if person.bio %}
+    {% assign slug = person.name | slugify %}
+    {% assign uid = include.id | append: '-' | append: slug %}
+    <dialog class="sheet" id="dialog-{{ uid }}" aria-label="{{ person.name }}">
+      <button class="sheet__close" data-closes aria-label="Close">&times;</button>
+      <div class="sheet__head">
+        <div class="person__portrait person__portrait--small">
+          {% if person.image %}
+            <img src="{{ person.image | prepend: '/assets/img/' | relative_url }}" alt="" loading="lazy">
+          {% else %}
+            <span class="person__initials" aria-hidden="true">
+              {%- assign parts = person.name | split: ' ' -%}
+              {{- parts.first | slice: 0 }}{{ parts.last | slice: 0 -}}
+            </span>
+          {% endif %}
+        </div>
+        <div>
+          <h3 class="sheet__name">{{ person.name }}</h3>
+          <p class="sheet__affiliation">{{ person.affiliation }}</p>
+        </div>
+      </div>
+      <p class="sheet__bio">{{ person.bio }}</p>
+      {% if person.url %}<a class="btn btn--small" href="{{ person.url }}">Website</a>{% endif %}
+    </dialog>
+  {% endif %}
+{% endfor %}

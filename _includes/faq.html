@@ -1,0 +1,14 @@
+<section class="section section--tint" id="faq">
+  <h2 class="section__title">FAQ</h2>
+  {% for group in site.data.faq %}
+    <h3 class="faq__group">{{ group.group }}</h3>
+    <div class="faq">
+      {% for item in group.items %}
+        <details class="faq__item">
+          <summary>{{ item.q }}</summary>
+          <div class="faq__answer"><p>{{ item.a }}</p></div>
+        </details>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>

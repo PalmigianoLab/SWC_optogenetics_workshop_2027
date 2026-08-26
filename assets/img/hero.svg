@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" width="1600" height="800" role="img"
+     aria-label="Wireframe mouse, macaque, zebrafish, fly and worm on a perspective grid, lit by a beam of light, over faint field-theory formulas">
+  <!-- ===================================================================
+       Hero artwork. Three colours drive the whole scene:
+         #071a1c  deep background      #7fd4c1  wireframe / grid
+         #e8a04a  the light            (change them here and nothing else)
+       =================================================================== -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#0d2f30"/>
+      <stop offset="55%" stop-color="#081c20"/>
+      <stop offset="100%" stop-color="#040f13"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fff3d8" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#e8a04a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#e8a04a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd9a0" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#e8a04a" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soften" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .wire  { fill:none; stroke:#7fd4c1; stroke-width:1.6; stroke-linejoin:round; }
+      .wire--soft { stroke-opacity:0.45; stroke-width:1.1; }
+      .node  { fill:#bff0e3; }
+      .grid  { stroke:#2f6f6a; stroke-width:1; fill:none; }
+      .eq    { fill:#7fd4c1; font-family:"Iowan Old Style","Palatino",Georgia,serif;
+               font-style:italic; opacity:0.20; }
+      .eq--dim { opacity:0.12; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="800" fill="url(#sky)"/>
+
+  <!-- field-theory perturbation expansion, sitting in the background -->
+  <g class="eq" font-size="27">
+    <text x="90"  y="120">G = G₀ + G₀ Σ G</text>
+    <text x="1080" y="96">δ⟨φ(t)⟩ = ∫ χ(t − t′) h(t′) dt′</text>
+    <text x="150" y="700">χ(ω) = [ 1 − J φ′(ω) ]⁻¹</text>
+    <text x="1010" y="742">Σ(t,t′) = g² G(t,t′) + O(g⁴)</text>
+  </g>
+  <g class="eq eq--dim" font-size="22">
+    <text x="640" y="70">Z[h] = ∫ 𝒟φ e^(−S[φ] + ∫ h φ)</text>
+    <text x="70" y="392">S[φ] = ½ ∫ φ D⁻¹ φ − (g/3!) ∫ φ³</text>
+    <text x="1180" y="470">⟨φφ⟩_c = G₀ + G₀ Σ G₀ + …</text>
+    <text x="430" y="762">τ ∂ₜ x = −x + J ϕ(x) + h(t)</text>
+  </g>
+
+  <!-- perspective floor -->
+  <g class="grid" opacity="0.5">
+    <path d="M0 512 H1600"/>
+    <g>
+      <path d="M800 512 L-260 800"/><path d="M800 512 L60 800"/><path d="M800 512 L330 800"/>
+      <path d="M800 512 L580 800"/><path d="M800 512 L800 800"/><path d="M800 512 L1020 800"/>
+      <path d="M800 512 L1270 800"/><path d="M800 512 L1540 800"/><path d="M800 512 L1860 800"/>
+    </g>
+    <path d="M0 536 H1600" opacity="0.8"/><path d="M0 568 H1600" opacity="0.7"/>
+    <path d="M0 612 H1600" opacity="0.6"/><path d="M0 672 H1600" opacity="0.5"/>
+    <path d="M0 752 H1600" opacity="0.4"/>
+  </g>
+
+  <!-- the beam: aperture, halo, and rays fanning right -->
+  <g>
+    <ellipse cx="620" cy="330" rx="150" ry="150" fill="url(#halo)" filter="url(#soften)" opacity="0.85"/>
+    <g stroke="url(#beam)" stroke-width="2.4" fill="none" opacity="0.9">
+      <path d="M640 330 L1460 96"/>   <path d="M640 330 L1470 168"/>
+      <path d="M640 330 L1480 244"/>  <path d="M640 330 L1470 320"/>
+      <path d="M640 330 L1460 398"/>  <path d="M640 330 L1430 474"/>
+      <path d="M640 330 L1390 548"/>  <path d="M640 330 L1330 616"/>
+    </g>
+    <g fill="none" stroke="#e8a04a" filter="url(#glow)">
+      <circle cx="620" cy="330" r="74" stroke-width="2.2" opacity="0.85"/>
+      <circle cx="620" cy="330" r="52" stroke-width="1.4" opacity="0.6" stroke-dasharray="9 7"/>
+      <circle cx="620" cy="330" r="26" fill="#fff6e4" stroke="none" opacity="0.95"/>
+    </g>
+    <!-- optic fibre running down to the mouse -->
+    <path d="M600 392 C 520 520, 700 560, 902 566" class="wire" stroke="#e8a04a"
+          stroke-opacity="0.75" stroke-width="2.6" filter="url(#glow)"/>
+  </g>
+
+  <!-- mouse -->
+  <g transform="translate(880 470)" filter="url(#glow)">
+    <path class="wire" d="M22 96 L2 74 L28 46 L74 26 L136 20 L196 30 L236 54 L246 82 L224 110 L166 122 L96 122 L48 112 Z"/>
+    <path class="wire wire--soft" d="M28 46 L96 122 M74 26 L166 122 M136 20 L224 110 M196 30 L246 82 M2 74 L96 122"/>
+    <path class="wire" d="M64 30 C 58 6, 92 2, 96 26"/>
+    <path class="wire" d="M246 82 C 300 74, 330 120, 306 168"/>
+    <circle class="node" cx="22" cy="96" r="3"/><circle class="node" cx="74" cy="26" r="3"/>
+    <circle class="node" cx="136" cy="20" r="3"/><circle class="node" cx="236" cy="54" r="3"/>
+    <circle class="node" cx="166" cy="122" r="3"/>
+    <circle cx="30" cy="70" r="4.5" fill="#ffe7bd"/>
+  </g>
+
+  <!-- macaque, seated profile -->
+  <g transform="translate(1300 452) scale(0.92)" filter="url(#glow)">
+    <path class="wire" d="M64 34 L96 14 L134 26 L142 62 L124 88 L138 130 L162 178 L150 216 L96 224 L60 200 L52 150 L70 104 Z"/>
+    <path class="wire wire--soft" d="M96 14 L124 88 M142 62 L70 104 M124 88 L150 216 M52 150 L138 130"/>
+    <path class="wire" d="M60 200 C 24 214, 18 250, 46 258"/>
+    <circle class="node" cx="96" cy="14" r="3"/><circle class="node" cx="142" cy="62" r="3"/>
+    <circle class="node" cx="150" cy="216" r="3"/>
+    <circle cx="88" cy="46" r="4" fill="#ffe7bd"/>
+  </g>
+
+  <!-- zebrafish -->
+  <g transform="translate(1140 150)" filter="url(#glow)">
+    <path class="wire" d="M0 44 L52 14 L128 26 L182 44 L128 66 L52 76 Z"/>
+    <path class="wire wire--soft" d="M52 14 L52 76 M128 26 L128 66 M0 44 L128 26 M0 44 L128 66"/>
+    <path class="wire" d="M182 44 L230 16 L222 44 L230 74 Z"/>
+    <circle class="node" cx="52" cy="14" r="2.6"/><circle class="node" cx="128" cy="26" r="2.6"/>
+    <circle class="node" cx="52" cy="76" r="2.6"/>
+    <circle cx="16" cy="42" r="3.4" fill="#ffe7bd"/>
+  </g>
+
+  <!-- fly -->
+  <g transform="translate(330 214)" filter="url(#glow)">
+    <path class="wire" d="M0 26 L22 12 L58 16 L92 30 L58 48 L20 44 Z"/>
+    <path class="wire wire--soft" d="M22 12 L20 44 M58 16 L58 48"/>
+    <path class="wire" d="M34 14 C 46 -22, 104 -26, 108 -2 C 96 12, 58 16, 34 14 Z" stroke-opacity="0.55"/>
+    <path class="wire" d="M36 44 C 52 76, 108 76, 112 54 C 96 44, 58 42, 36 44 Z" stroke-opacity="0.4"/>
+    <circle cx="8" cy="24" r="3.2" fill="#ffe7bd"/>
+  </g>
+
+  <!-- C. elegans -->
+  <g transform="translate(150 560)" filter="url(#glow)">
+    <path class="wire" d="M0 40 C 44 -6, 92 82, 148 34 C 196 -6, 236 60, 282 30"
+          stroke-width="3.4" stroke-linecap="round"/>
+    <path class="wire wire--soft" d="M0 52 C 44 6, 92 94, 148 46 C 196 6, 236 72, 282 42"/>
+    <circle cx="2" cy="40" r="3.6" fill="#ffe7bd"/>
+  </g>
+
+  <!-- floating opsin-ish molecules -->
+  <g stroke="#7fd4c1" fill="none" opacity="0.55" filter="url(#glow)">
+    <g transform="translate(470 96)">
+      <circle r="9" fill="#0d2f30"/>
+      <path d="M0 -9 V-22 M0 9 V22 M-9 0 H-22 M9 0 H22 M-7 -7 L-17 -17 M7 7 L17 17 M7 -7 L17 -17 M-7 7 L-17 17"/>
+      <g fill="#e8a04a" stroke="none">
+        <circle cx="0" cy="-24" r="3"/><circle cx="0" cy="24" r="3"/>
+        <circle cx="-24" cy="0" r="3"/><circle cx="24" cy="0" r="3"/>
+      </g>
+    </g>
+    <g transform="translate(880 232) scale(0.7)">
+      <circle r="9" fill="#0d2f30"/>
+      <path d="M0 -9 V-22 M0 9 V22 M-9 0 H-22 M9 0 H22 M-7 -7 L-17 -17 M7 7 L17 17"/>
+      <g fill="#e8a04a" stroke="none">
+        <circle cx="0" cy="-24" r="3"/><circle cx="-24" cy="0" r="3"/><circle cx="24" cy="0" r="3"/>
+      </g>
+    </g>
+    <g transform="translate(250 330) scale(0.55)">
+      <circle r="9" fill="#0d2f30"/>
+      <path d="M0 -9 V-22 M0 9 V22 M-9 0 H-22 M9 0 H22"/>
+      <g fill="#e8a04a" stroke="none">
+        <circle cx="0" cy="-24" r="3.5"/><circle cx="24" cy="0" r="3.5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- vignette, so the hero card sits comfortably on top -->
+  <rect width="1600" height="800" fill="url(#sky)" opacity="0.25"/>
+  <rect y="600" width="1600" height="200" fill="#040f13" opacity="0.45"/>
+</svg>

@@ -1,0 +1,13 @@
+# The three cards under About.
+- title: First topic block
+  body: >-
+    One paragraph describing the first strand of the programme. Replace this
+    text; the card grid adapts to however many entries you list here.
+- title: Second topic block
+  body: >-
+    A second strand. Three reads well on a wide screen, two or four also work —
+    the layout reflows on its own.
+- title: Third topic block
+  body: >-
+    A third strand, so the row is balanced. Keep each of these to roughly the
+    same length and the cards stay tidy.

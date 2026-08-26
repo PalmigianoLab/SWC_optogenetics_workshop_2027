@@ -1,0 +1,24 @@
+<section class="section" id="about">
+  <h2 class="section__title">About</h2>
+  <div class="prose">
+    <p>
+      Placeholder. One or two paragraphs saying what the workshop is, who it is
+      for, and why someone should come. Replace this text in
+      <code>_includes/about.html</code>.
+    </p>
+    <ul>
+      <li><strong>The programme</strong> — lectures, tutorials, posters, whatever applies.</li>
+      <li><strong>No registration fee</strong>, or the fee if there is one.</li>
+      <li><strong>The venue</strong> is <a href="{{ site.workshop.venue_url }}">{{ site.workshop.venue }}</a>, {{ site.workshop.location }}.</li>
+    </ul>
+  </div>
+
+  <div class="cards">
+    {% for topic in site.data.topics %}
+      <article class="card">
+        <h3>{{ topic.title }}</h3>
+        <p>{{ topic.body }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>

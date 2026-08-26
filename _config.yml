@@ -1,0 +1,30 @@
+# ---------------------------------------------------------------------------
+# Everything the site says about the workshop lives here. Placeholders below —
+# replace them and the whole page follows.
+# ---------------------------------------------------------------------------
+title: Theory and Practice of Optogenetics Function and Dynamics
+tagline: State of the art and theory and experiments of targeted manipulations of activity
+description: Placeholder description for search engines and link previews.
+url: ""
+baseurl: ""
+
+workshop:
+  short_name: OPTOGENETICS
+  dates: 31 March – 2 April 2027
+  start_iso: "2027-03-31T09:00:00+01:00"
+  deadline: 15 January 2027
+  deadline_iso: "2027-01-15T23:59:59+00:00"
+  location: London, UK
+  venue: Sainsbury Wellcome Centre, UCL
+  venue_url: "https://www.sainsburywellcome.org/web/"
+  apply_url: "#"
+  address: 25 Howland Street, London W1T 4JG
+  apply_label: Apply now
+
+plugins:
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+exclude: [Gemfile, Gemfile.lock, vendor, README.md]
