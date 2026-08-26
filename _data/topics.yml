@@ -9,11 +9,6 @@
     We intend to leave with the skeleton of a review article on where
     optogenetic perturbation now stands — what it can establish, what it
     cannot, and which disagreements are real rather than terminological.
-- title: Predicting perturbations
-  body: >-
-    How should a perturbation be analysed, and what should we expect before we
-    run it? Sessions on methods for inferring circuit structure from targeted
-    manipulations, and on predicting the response of a network to them.
 - title: New collaborations
   body: >-
     Long breaks, small rooms, and a deliberately mixed guest list across
