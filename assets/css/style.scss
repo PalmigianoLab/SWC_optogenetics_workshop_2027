@@ -103,7 +103,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; m
 .hero__art {
   height: clamp(320px, 52vw, 620px);
   border-radius: 22px;
-  background: #071a1c url("/assets/img/hero.svg") center/cover no-repeat;
+  background: #071a1c url("../img/hero.svg") center/cover no-repeat;
 }
 .hero__card {
   max-width: var(--measure);
