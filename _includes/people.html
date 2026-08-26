@@ -2,7 +2,7 @@
   Shared grid for speakers and organisers. A person with a `bio` becomes a
   button that opens a panel; without one the card is inert.
 {% endcomment %}
-<div class="people{% if include.centred %} people--center{% endif %}">
+<div class="people{% if include.centred %} people--center{% endif %}{% if include.large %} people--large{% endif %}">
   {% for person in include.people %}
     {% assign slug = person.name | slugify %}
     {% assign uid = include.id | append: '-' | append: slug %}

@@ -45,6 +45,23 @@ IMAGES = {
     "Tatiana Engel": "tatiana-engel.jpg",              # simonsfoundation.org
     "Vivek Jayaraman": "vivek-jayaraman.jpg",          # janelia.org
     "Rossa Cossart": "rossa-cossart.jpg",              # sfari.org (she spells it Rosa)
+    # Supplied by Agostina, 26 August 2026:
+    "David Tank": "david_tank.jpg",
+    "Kayvon Daie": "kayvon_daie.jpg",
+    "Ran Darshan": "ran_darshan.jpg",
+    "Attila Losonczy": "attila_losonczy.jpg",
+    "Eva Naumann": "eva_naumann.jpg",
+    "Ulysses Pereira": "ulysses_pereira.jpg",
+    "Luca Mazzucato": "luca_mazzucato.jpg",
+    "Hillel Adesnik": "hillel_adesnik.jpg",
+    "Edward Moser": "edward_moser.jpg",
+    "LinLin Fan": "linlin_fan.jpg",
+    "Sadra Sadeh": "sadra_sadeh.jpg",
+    "Ian Oldenburg": "ian_oldenburg.jpg",
+    "Yonathan Aljadeff": "yonathan_aljadeff.jpg",
+    "Bijan Pesaran": "bijan_pesaran.jpg",
+    "Dima Rinberg": "dima_rinberg.jpg",
+    "Svoboda Karel": "svoboda_karel.jpg",
 }
 
 

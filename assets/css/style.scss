@@ -208,6 +208,12 @@ code { background: var(--paper-tint); padding: 0.1em 0.35em; border-radius: 4px;
   grid-template-columns: repeat(auto-fit, 190px);
   justify-content: center;
 }
+/* Keynotes carry more weight, so give them more room. */
+.people--large { grid-template-columns: repeat(auto-fit, 250px); }
+.people--large .person__portrait { width: 180px; height: 180px; }
+.people--large .person__initials { font-size: 2.9rem; }
+.people--large .person__name { font-size: 1.2rem; }
+.people--large .person__affiliation { font-size: 0.92rem; }
 .person {
   text-align: center;
   font: inherit;

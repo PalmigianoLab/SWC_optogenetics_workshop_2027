@@ -12,6 +12,7 @@
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Attila Losonczy"
   affiliation: "Columbia"
+  image: attila_losonczy.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Rossa Cossart"
   affiliation: ""

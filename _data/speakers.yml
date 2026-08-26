@@ -4,55 +4,70 @@
 
 - name: "Ran Darshan"
   affiliation: "Tel Aviv"
+  image: ran_darshan.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Lea Duncker"
   affiliation: "Columbia Univ"
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Luca Mazzucato"
   affiliation: "Oregon"
+  image: luca_mazzucato.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Ulysses Pereira"
   affiliation: "Allen"
+  image: ulysses_pereira.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Yonathan Aljadeff"
   affiliation: "UCSD"
+  image: yonathan_aljadeff.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Claudia Clopath"
   affiliation: "Kings College"
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Sadra Sadeh"
   affiliation: "Crick"
+  image: sadra_sadeh.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Eva Naumann"
   affiliation: "Duke"
+  image: eva_naumann.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Svoboda Karel"
   affiliation: "Allen"
+  image: svoboda_karel.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Dima Rinberg"
   affiliation: "NYU"
+  image: dima_rinberg.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Valentina Emiliani"
   affiliation: "Vision Institute"
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Ian Oldenburg"
   affiliation: "Rutgers"
+  image: ian_oldenburg.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Bijan Pesaran"
   affiliation: ""
+  image: bijan_pesaran.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Hillel Adesnik"
   affiliation: "Berkeley"
+  image: hillel_adesnik.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Edward Moser"
   affiliation: ""
+  image: edward_moser.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Kayvon Daie"
   affiliation: "Allen"
+  image: kayvon_daie.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "LinLin Fan"
   affiliation: "MIT"
+  image: linlin_fan.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "David Tank"
   affiliation: "Princeton"
+  image: david_tank.jpg
   # bio: add a sentence or two here, and the card becomes clickable
