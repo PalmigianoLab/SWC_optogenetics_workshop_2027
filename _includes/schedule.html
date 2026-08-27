@@ -1,0 +1,26 @@
+<section class="section" id="schedule">
+  <h2 class="section__title">Programme</h2>
+  <p class="schedule__note">
+    Draft. Keynotes are 45 minutes; invited talks are 20 minutes with 10 for questions.
+  </p>
+  <div class="schedule">
+    {% for day in site.data.schedule %}
+      <div class="schedule__day">
+        <h3 class="schedule__dayname">{{ day.day }}</h3>
+        <table class="schedule__table">
+          <tbody>
+            {% for slot in day.slots %}
+              <tr class="slot slot--{{ slot.kind }}">
+                <td class="slot__time">{{ slot.time }}</td>
+                <td class="slot__what">
+                  {{ slot.what }}
+                  {% if slot.kind == "keynote" %}<span class="slot__tag">Keynote</span>{% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  </div>
+</section>

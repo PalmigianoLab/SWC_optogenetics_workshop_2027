@@ -2,14 +2,14 @@
 # Everything the site says about the workshop lives here. Placeholders below —
 # replace them and the whole page follows.
 # ---------------------------------------------------------------------------
-title: Theory and Practice of Optogenetics Function and Dynamics
+title: Network Function through Perturbations
 tagline: State of the art and theory and experiments of targeted manipulations of activity
 description: Placeholder description for search engines and link previews.
 url: ""
 baseurl: ""
 
 workshop:
-  short_name: OPTOGENETICS
+  short_name: Optogenetics Workshop
   dates: 31 March – 2 April 2027
   start_iso: "2027-03-31T09:00:00+01:00"
   deadline: 15 January 2027

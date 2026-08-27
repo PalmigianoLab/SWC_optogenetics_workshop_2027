@@ -4,13 +4,16 @@
 
 - name: "Andrew Leifer"
   affiliation: "Princeton"
+  field: "Experiment"
   image: andrew-leifer.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Agostina Palmigiano"
   affiliation: "UCL"
+  field: "Theory"
   image: agostina-palmigiano.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Arseny Finkelstein"
   affiliation: "Tel Aviv"
+  field: "Experiment"
   image: arseny-finkelstein.jpg
   # bio: add a sentence or two here, and the card becomes clickable

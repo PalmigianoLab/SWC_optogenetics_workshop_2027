@@ -4,17 +4,26 @@
 
 - name: "Tatiana Engel"
   affiliation: "Princeton"
+  field: "Theory"
   image: tatiana-engel.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Vivek Jayaraman"
   affiliation: ""
+  field: "Experiment"
   image: vivek-jayaraman.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Attila Losonczy"
   affiliation: "Columbia"
+  field: "Experiment"
   image: attila_losonczy.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Rossa Cossart"
   affiliation: ""
+  field: "Experiment"
   image: rossa-cossart.jpg
+  # bio: add a sentence or two here, and the card becomes clickable
+- name: "Edvard Moser"
+  affiliation: ""
+  field: "Experiment"
+  image: edvard_moser.jpg
   # bio: add a sentence or two here, and the card becomes clickable

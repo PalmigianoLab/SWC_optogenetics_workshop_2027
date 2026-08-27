@@ -17,8 +17,12 @@
   --line: rgba(0, 0, 0, 0.1);
   --footer-bg: #1c1c1d;
 
-  --display: "Roboto Slab", Georgia, serif;
-  --body: "Roboto", system-ui, -apple-system, sans-serif;
+  /* palmigianolab.com sets no font of its own: it inherits Bootstrap's system
+     stack, which is San Francisco on a Mac and Roboto on Android. Same here, so
+     the two sites render identically on the same machine. */
+  --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --display: var(--body);
 
   --measure: 62rem;
 }
@@ -64,6 +68,24 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; m
 }
 .btn:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
 .btn--small { padding: 0.5rem 1.1rem; font-size: 0.85rem; }
+
+/* --- institution logos --------------------------------------------------- */
+.institution-logos {
+  max-width: var(--measure);
+  margin: 1.4rem auto -0.6rem;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+}
+.institution-logos img { height: 34px; width: auto; display: block; }
+.institution-logos .logo-gatsby { height: 58px; }
+@media (max-width: 576px) {
+  .institution-logos { gap: 1rem; }
+  .institution-logos img { height: 26px; }
+  .institution-logos .logo-gatsby { height: 44px; }
+}
 
 /* --- sticky top bar ------------------------------------------------------ */
 .topbar {
@@ -194,6 +216,53 @@ code { background: var(--paper-tint); padding: 0.1em 0.35em; border-radius: 4px;
 }
 .card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; color: var(--pine); }
 .card p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* --- programme ----------------------------------------------------------- */
+.schedule__note {
+  max-width: var(--measure);
+  margin: -1.5rem auto 2.5rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.schedule {
+  max-width: var(--measure);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+.schedule__dayname {
+  font-size: 1.15rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 2px solid var(--ink);
+}
+.schedule__table { width: 100%; border-collapse: collapse; }
+.slot td { padding: 0.5rem 0; vertical-align: baseline; border-bottom: 1px solid var(--line); }
+.slot__time {
+  width: 8.5rem;
+  white-space: nowrap;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+}
+.slot__what { font-size: 0.95rem; }
+.slot--keynote .slot__what { font-weight: 600; }
+.slot--break .slot__what, .slot--lunch .slot__what { color: var(--ink-soft); font-style: italic; }
+.slot__tag {
+  margin-left: 0.5rem;
+  padding: 0.08rem 0.45rem;
+  border-radius: 999px;
+  background: var(--pine);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
 
 /* --- people grid --------------------------------------------------------- */
 .people {

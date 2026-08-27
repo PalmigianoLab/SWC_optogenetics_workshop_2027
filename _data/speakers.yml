@@ -8,65 +8,76 @@
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Lea Duncker"
   affiliation: "Columbia Univ"
+  field: "Theory"
   image: lea_duncker.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Luca Mazzucato"
   affiliation: "Oregon"
+  field: "Theory"
   image: luca_mazzucato.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Ulises Pereira"
   affiliation: "Allen"
+  field: "Theory"
   image: ulises_pereira.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Yonathan Aljadeff"
   affiliation: "UCSD"
+  field: "Theory"
   image: yonathan_aljadeff.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Sadra Sadeh"
   affiliation: "Crick"
+  field: "Theory"
   image: sadra_sadeh.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Eva Naumann"
   affiliation: "Duke"
+  field: "Experiment"
   image: eva_naumann.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Karel Svoboda"
   affiliation: "Allen"
+  field: "Experiment"
   image: karel_svoboda.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Dima Rinberg"
   affiliation: "NYU"
+  field: "Experiment"
   image: dima_rinberg.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Valentina Emiliani"
   affiliation: "Vision Institute"
+  field: "Experiment"
   image: valentina_emiliani.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Ian Oldenburg"
   affiliation: "Rutgers"
+  field: "Experiment"
   image: ian_oldenburg.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Bijan Pesaran"
   affiliation: ""
+  field: "Experiment"
   image: bijan_pesaran.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Hillel Adesnik"
   affiliation: "Berkeley"
+  field: "Experiment"
   image: hillel_adesnik.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Edvard Moser"
-  affiliation: ""
-  image: edvard_moser.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Kayvon Daie"
   affiliation: "Allen"
+  field: "Experiment"
   image: kayvon_daie.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "LinLin Fan"
   affiliation: "MIT"
+  field: "Experiment"
   image: linlin_fan.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "David Tank"
   affiliation: "Princeton"
+  field: "Experiment"
   image: david_tank.jpg
   # bio: add a sentence or two here, and the card becomes clickable

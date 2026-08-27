@@ -34,7 +34,12 @@ SECTIONS = {
     "invited speakers": "invited",
     "attendees": "attendees",
 }
-NAME, SURNAME, INSTITUTION, CONFIRMED = 0, 1, 6, 12
+NAME, SURNAME, INSTITUTION, FIELD, CONFIRMED = 0, 1, 6, 8, 12
+
+# Listed under "Invited speakers" in the sheet but giving a keynote. Moving the
+# row in the spreadsheet would be tidier; this is here so the site is right in
+# the meantime.
+AS_KEYNOTE = {"Edvard Moser"}
 
 # Photographs live in assets/img/ as firstname_lastname.jpg. They are matched to
 # people by comparing name words rather than by an exact string, because the
@@ -91,6 +96,7 @@ def parse(text):
         people.append({
             "name": " ".join(name.split()),          # the sheet has stray double spaces
             "institution": cell(row, INSTITUTION),
+            "field": cell(row, FIELD),
             "confirmed": cell(row, CONFIRMED).lower().startswith("yes"),
             "section": section,
         })
@@ -112,6 +118,8 @@ def render(people, note):
     for person in people:
         lines.append(f"- name: {yaml_quote(person['name'])}")
         lines.append(f"  affiliation: {yaml_quote(person['institution'])}")
+        if person.get("field"):
+            lines.append(f"  field: {yaml_quote(person['field'])}")
         photo = photo_for(person["name"], render.index)
         if photo:
             lines.append(f"  image: {photo}")
@@ -136,8 +144,9 @@ def main():
     organizers = [p for p in confirmed if p["section"] == "organizers"]
     # Keynotes are listed whether or not the sheet records a reply — Agostina's
     # call on 26 August 2026. Everyone else still has to have confirmed.
-    keynotes = [p for p in people if p["section"] == "keynote"]
-    invited = [p for p in confirmed if p["section"] == "invited"]
+    keynotes = [p for p in people if p["section"] == "keynote" or p["name"] in AS_KEYNOTE]
+    invited = [p for p in confirmed
+               if p["section"] == "invited" and p["name"] not in AS_KEYNOTE]
     (ROOT / "_data" / "organizers.yml").write_text(
         render(organizers, "Organisers."), encoding="utf-8")
     (ROOT / "_data" / "keynotes.yml").write_text(
