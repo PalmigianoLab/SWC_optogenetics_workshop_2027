@@ -6,103 +6,121 @@
     - time: "16:30 – 17:00"
       kind: break
       what: "Registration and coffee"
-    - time: "17:00 – 17:45"
+    - time: "17:00 – 17:50"
       kind: keynote
-      what: "Tatiana Engel"
-    - time: "17:45"
-      kind: break
-      what: "Drinks reception"
-- day: Thursday 1 April
-  slots:
-    - time: "09:30 – 10:15"
-      kind: keynote
-      what: "Vivek Jayaraman"
-    - time: "10:15 – 10:45"
+      what: "Edvard Moser"
+    - time: "17:50 – 18:20"
       kind: talk
       what: "Lea Duncker"
-    - time: "10:45 – 11:15"
+    - time: "18:20 – 18:50"
       kind: talk
       what: "Eva Naumann"
-    - time: "11:15 – 11:30"
+    - time: "19:30"
+      kind: dinner
+      what: "Dinner at a restaurant"
+- day: Thursday 1 April
+  slots:
+    - time: "09:30 – 10:20"
+      kind: keynote
+      what: "Vivek Jayaraman"
+    - time: "10:20 – 10:50"
+      kind: talk
+      what: "Hillel Adesnik"
+    - time: "10:50 – 11:20"
+      kind: talk
+      what: "Agostina Palmigiano"
+    - time: "11:20 – 11:40"
       kind: break
       what: "Coffee"
-    - time: "11:30 – 12:00"
+    - time: "11:40 – 12:10"
       kind: talk
       what: "Karel Svoboda"
-    - time: "12:00 – 12:30"
+    - time: "12:10 – 12:40"
       kind: talk
       what: "Luca Mazzucato"
-    - time: "12:30 – 14:00"
+    - time: "12:40 – 14:00"
       kind: lunch
       what: "Lunch"
-    - time: "14:00 – 14:45"
+    - time: "14:00 – 14:50"
       kind: keynote
-      what: "Attila Losonczy"
-    - time: "14:45 – 15:15"
+      what: "Tatiana Engel"
+    - time: "14:50 – 15:20"
+      kind: talk
+      what: "Andrew Leifer"
+    - time: "15:20 – 15:50"
       kind: talk
       what: "Dima Rinberg"
-    - time: "15:15 – 15:45"
-      kind: talk
-      what: "Valentina Emiliani"
-    - time: "15:45 – 16:15"
+    - time: "15:50 – 16:10"
       kind: break
       what: "Coffee"
-    - time: "16:15 – 16:45"
+    - time: "16:10 – 16:40"
+      kind: talk
+      what: "Valentina Emiliani"
+    - time: "16:40 – 17:10"
       kind: talk
       what: "Ulises Pereira"
-    - time: "16:45 – 17:15"
+    - time: "17:10 – 17:20"
+      kind: break
+      what: "Break"
+    - time: "17:20 – 17:50"
       kind: talk
       what: "Ian Oldenburg"
-    - time: "17:15 – 17:45"
+    - time: "17:50 – 18:20"
       kind: talk
       what: "Bijan Pesaran"
-    - time: "17:45"
+    - time: "18:20"
       kind: break
       what: "Close"
 - day: Friday 2 April
   slots:
-    - time: "09:30 – 10:15"
+    - time: "09:30 – 10:20"
       kind: keynote
-      what: "Rossa Cossart"
-    - time: "10:15 – 10:45"
+      what: "Attila Losonczy"
+    - time: "10:20 – 10:50"
       kind: talk
       what: "Yonathan Aljadeff"
-    - time: "10:45 – 11:15"
+    - time: "10:50 – 11:20"
       kind: talk
-      what: "Hillel Adesnik"
-    - time: "11:15 – 11:30"
+      what: "Arseny Finkelstein"
+    - time: "11:20 – 11:40"
       kind: break
       what: "Coffee"
-    - time: "11:30 – 12:00"
+    - time: "11:40 – 12:10"
       kind: talk
       what: "Kayvon Daie"
-    - time: "12:00 – 12:30"
+    - time: "12:10 – 12:40"
       kind: talk
       what: "Sadra Sadeh"
-    - time: "12:30 – 14:00"
+    - time: "12:40 – 14:00"
       kind: lunch
       what: "Lunch"
-    - time: "14:00 – 14:45"
+    - time: "14:00 – 14:50"
       kind: keynote
-      what: "Edvard Moser"
-    - time: "14:45 – 15:15"
+      what: "Rossa Cossart"
+    - time: "14:50 – 15:20"
       kind: talk
       what: "LinLin Fan"
-    - time: "15:15 – 15:45"
+    - time: "15:20 – 15:50"
       kind: talk
       what: "David Tank"
-    - time: "15:45 – 16:15"
+    - time: "15:50 – 16:10"
       kind: break
       what: "Coffee"
-    - time: "16:15 – 16:45"
+    - time: "16:10 – 16:40"
       kind: talk
       what: "Ran Darshan"
-    - time: "16:45 – 17:15"
+    - time: "16:40 – 17:10"
       kind: talk
       what: "Open slot"
-    - time: "17:15 – 17:45"
+    - time: "17:10 – 17:20"
+      kind: break
+      what: "Break"
+    - time: "17:20 – 17:50"
       kind: talk
       what: "Open slot"
-    - time: "17:45"
+    - time: "17:50 – 18:20"
+      kind: talk
+      what: "Open slot"
+    - time: "18:20"
       kind: break
       what: "Close"

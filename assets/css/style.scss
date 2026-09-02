@@ -123,13 +123,13 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; m
 .hero { padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem) 0; }
 
 .hero__art {
-  height: clamp(320px, 52vw, 620px);
+  height: clamp(260px, 36vw, 470px);
   border-radius: 22px;
-  background: #071a1c url("../img/hero.svg") center/cover no-repeat;
+  background: #dfe3e6 url("../img/swc-building.jpg") center 38% / cover no-repeat;
 }
 .hero__card {
   max-width: var(--measure);
-  margin: -5.5rem auto 0;
+  margin: -3rem auto 0;
   position: relative;
   background: var(--paper);
   border: 1px solid var(--line);
@@ -145,6 +145,23 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; m
   color: var(--ink-soft);
   margin: 0.9rem 0 1.4rem;
 }
+/* The credit sits on the picture, top right, where the sky is plain — below it
+   the title card would cover it. */
+.hero__artwrap {
+  position: relative;
+  max-width: calc(var(--measure) * 1.5);
+  margin: 0 auto;
+}
+.hero__credit {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 640px) { .hero__credit { display: none; } }
 .hero__meta {
   font-size: 0.95rem;
   color: var(--ink-soft);
@@ -250,7 +267,9 @@ code { background: var(--paper-tint); padding: 0.1em 0.35em; border-radius: 4px;
 }
 .slot__what { font-size: 0.95rem; }
 .slot--keynote .slot__what { font-weight: 600; }
-.slot--break .slot__what, .slot--lunch .slot__what { color: var(--ink-soft); font-style: italic; }
+.slot--break .slot__what,
+.slot--lunch .slot__what,
+.slot--dinner .slot__what { color: var(--ink-soft); font-style: italic; }
 .slot__tag {
   margin-left: 0.5rem;
   padding: 0.08rem 0.45rem;
