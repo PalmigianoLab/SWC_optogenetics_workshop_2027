@@ -3,19 +3,20 @@
 
 Each full day runs to the same shape:
 
-    09:30  keynote (50) + 2 talks
-    11:20  coffee (20)
-    11:40  2 talks
-    12:40  lunch (80 minutes)
-    14:00  keynote (50) + 2 talks
-    15:50  coffee (20)
-    16:10  2 talks
-    17:10  short break (10)
-    17:20  2 talks
-    18:20  close
+    09:30  keynote (45) + 2 talks
+    11:15  coffee (30)
+    11:45  2 talks
+    12:45  lunch (75 minutes)
+    14:00  keynote (45) + 2 talks
+    15:45  coffee (20)
+    16:05  2 talks
+    17:05  short break (10)
+    17:15  2 talks
+    18:15  close
 
-Wednesday opens with a keynote and two talks, then dinner. Twenty-two talk
-slots in all.
+Wednesday is an evening only: nothing before 17:00, then registration, a
+keynote and two talks, then dinner. Every slot length comes from the constants
+below, so changing one moves everything after it. Twenty-two talk slots in all.
 
 Speakers come from _data/*.yml. The organisers speak too, and some of them have
 to be in a particular half of the day — see FIXED below. Everybody else is
@@ -31,7 +32,14 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-KEYNOTE, TALK, COFFEE, SHORT = 50, 30, 20, 10
+KEYNOTE, TALK, SHORT = 45, 30, 10
+MORNING_COFFEE, AFTERNOON_COFFEE = 30, 20
+REGISTRATION = 30
+
+# Wednesday runs from 17:00 to dinner; the full days break for lunch at a fixed
+# hour rather than a fixed length, so lunch absorbs any drift in the morning.
+WEDNESDAY_START, DINNER = 17 * 60, 19 * 60 + 30
+LUNCH_END = 14 * 60
 
 # Keynotes are placed in this order — Wednesday evening, then Thursday morning,
 # Thursday afternoon, Friday morning, Friday afternoon. Anyone not named here
@@ -82,44 +90,59 @@ def hhmm(m):
     return f"{m // 60:02d}:{m % 60:02d}"
 
 
+class Day:
+    """Slots laid end to end from a start time, in minutes past midnight."""
+
+    def __init__(self, start):
+        self.rows, self.clock = [], start
+
+    def add(self, length, kind, what=None, period=None):
+        self.rows.append((f"{hhmm(self.clock)} – {hhmm(self.clock + length)}",
+                          kind, what, period))
+        self.clock += length
+
+    def until(self, end, kind, what):
+        """A slot that runs to a fixed time rather than for a fixed length."""
+        self.rows.append((f"{hhmm(self.clock)} – {hhmm(end)}", kind, what, None))
+        self.clock = end
+
+    def at(self, time, kind, what):
+        """A slot with a start time and no end — dinner, and the close."""
+        self.rows.append((hhmm(time), kind, what, None))
+
+
 def skeleton():
     """Every slot in the workshop, before anyone is assigned to it."""
     days = []
 
-    wed = [("16:30 – 17:00", "break", "Registration and coffee", None),
-           ("17:00 – 17:50", "keynote", None, None),
-           ("17:50 – 18:20", "talk", None, "evening"),
-           ("18:20 – 18:50", "talk", None, "evening"),
-           ("19:30", "dinner", "Dinner at a restaurant", None)]
-    days.append(("Wednesday 31 March", wed))
+    wed = Day(WEDNESDAY_START)
+    wed.add(REGISTRATION, "break", "Registration and coffee")
+    wed.add(KEYNOTE, "keynote")
+    wed.add(TALK, "talk", None, "evening")
+    wed.add(TALK, "talk", None, "evening")
+    wed.at(DINNER, "dinner", "Dinner at a restaurant")
+    days.append(("Wednesday 31 March", wed.rows))
 
     for title in ("Thursday 1 April", "Friday 2 April"):
-        rows, clock = [], 9 * 60 + 30
-
-        def add(length, kind, what=None, period=None):
-            nonlocal clock
-            rows.append((f"{hhmm(clock)} – {hhmm(clock + length)}", kind, what, period))
-            clock += length
-
-        add(KEYNOTE, "keynote")
-        add(TALK, "talk", None, "morning")
-        add(TALK, "talk", None, "morning")
-        add(COFFEE, "break", "Coffee")
-        add(TALK, "talk", None, "morning")
-        add(TALK, "talk", None, "morning")
-        rows.append((f"{hhmm(clock)} – 14:00", "lunch", "Lunch", None))
-        clock = 14 * 60
-        add(KEYNOTE, "keynote")
-        add(TALK, "talk", None, "afternoon")
-        add(TALK, "talk", None, "afternoon")
-        add(COFFEE, "break", "Coffee")
-        add(TALK, "talk", None, "afternoon")
-        add(TALK, "talk", None, "afternoon")
-        add(SHORT, "break", "Break")
-        add(TALK, "talk", None, "afternoon")
-        add(TALK, "talk", None, "afternoon")
-        rows.append((hhmm(clock), "break", "Close", None))
-        days.append((title, rows))
+        day = Day(9 * 60 + 30)
+        day.add(KEYNOTE, "keynote")
+        day.add(TALK, "talk", None, "morning")
+        day.add(TALK, "talk", None, "morning")
+        day.add(MORNING_COFFEE, "break", "Coffee")
+        day.add(TALK, "talk", None, "morning")
+        day.add(TALK, "talk", None, "morning")
+        day.until(LUNCH_END, "lunch", "Lunch")
+        day.add(KEYNOTE, "keynote")
+        day.add(TALK, "talk", None, "afternoon")
+        day.add(TALK, "talk", None, "afternoon")
+        day.add(AFTERNOON_COFFEE, "break", "Coffee")
+        day.add(TALK, "talk", None, "afternoon")
+        day.add(TALK, "talk", None, "afternoon")
+        day.add(SHORT, "break", "Break")
+        day.add(TALK, "talk", None, "afternoon")
+        day.add(TALK, "talk", None, "afternoon")
+        day.at(day.clock, "break", "Close")
+        days.append((title, day.rows))
 
     return days
 
