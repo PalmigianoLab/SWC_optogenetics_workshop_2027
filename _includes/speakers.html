@@ -1,4 +1,10 @@
 <section class="section" id="speakers">
   <h2 class="section__title">Speakers</h2>
-  {% include people.html id='sp' people=site.data.speakers %}
+  {% comment %}
+    The organisers speak too, so they appear here as well as in their own
+    section below. Appended rather than merged into _data/speakers.yml, which
+    stays a faithful mirror of the spreadsheet's own sections.
+  {% endcomment %}
+  {% assign all_speakers = site.data.speakers | concat: site.data.organizers %}
+  {% include people.html id='sp' people=all_speakers %}
 </section>
