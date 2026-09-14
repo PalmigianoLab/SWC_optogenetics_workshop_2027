@@ -8,10 +8,10 @@
       what: "Registration and coffee"
     - time: "17:30 – 18:15"
       kind: keynote
-      what: "Edvard Moser"
+      what: "Vivek Jayaraman"
     - time: "18:15 – 18:45"
       kind: talk
-      what: "Lea Duncker"
+      what: "Ran Darshan"
     - time: "18:45 – 19:15"
       kind: talk
       what: "Eva Naumann"
@@ -22,10 +22,10 @@
   slots:
     - time: "09:30 – 10:15"
       kind: keynote
-      what: "Vivek Jayaraman"
+      what: "Tatiana Engel"
     - time: "10:15 – 10:45"
       kind: talk
-      what: "Hillel Adesnik"
+      what: "Arseny Finkelstein"
     - time: "10:45 – 11:15"
       kind: talk
       what: "Agostina Palmigiano"
@@ -34,93 +34,81 @@
       what: "Coffee"
     - time: "11:45 – 12:15"
       kind: talk
-      what: "Karel Svoboda"
+      what: "Dima Rinberg"
     - time: "12:15 – 12:45"
       kind: talk
-      what: "Luca Mazzucato"
+      what: "Lea Duncker"
     - time: "12:45 – 14:00"
       kind: lunch
       what: "Lunch"
     - time: "14:00 – 14:45"
       kind: keynote
-      what: "Tatiana Engel"
+      what: "Attila Losonczy"
     - time: "14:45 – 15:15"
       kind: talk
       what: "Andrew Leifer"
     - time: "15:15 – 15:45"
       kind: talk
-      what: "Dima Rinberg"
-    - time: "15:45 – 16:05"
+      what: "Ian Oldenburg"
+    - time: "15:45 – 16:30"
       kind: break
       what: "Coffee"
-    - time: "16:05 – 16:35"
-      kind: talk
-      what: "Valentina Emiliani"
-    - time: "16:35 – 17:05"
-      kind: talk
-      what: "Ulises Pereira"
-    - time: "17:05 – 17:15"
-      kind: break
-      what: "Break"
-    - time: "17:15 – 17:45"
-      kind: talk
-      what: "Ian Oldenburg"
-    - time: "17:45 – 18:15"
+    - time: "16:30 – 17:00"
       kind: talk
       what: "Bijan Pesaran"
-    - time: "18:15"
-      kind: break
-      what: "Close"
+    - time: "17:00 – 17:30"
+      kind: talk
+      what: "Luca Mazzucato"
+    - time: "17:30 – 18:00"
+      kind: talk
+      what: "Kayvon Daie"
+    - time: "18:00 – 21:00"
+      kind: poster
+      what: "Poster session"
 - day: Friday 2 April
   slots:
     - time: "09:30 – 10:15"
       kind: keynote
-      what: "Attila Losonczy"
+      what: "Rossa Cossart"
     - time: "10:15 – 10:45"
       kind: talk
-      what: "Yonathan Aljadeff"
+      what: "LinLin Fan"
     - time: "10:45 – 11:15"
       kind: talk
-      what: "Arseny Finkelstein"
+      what: "Yonathan Aljadeff"
     - time: "11:15 – 11:45"
       kind: break
       what: "Coffee"
     - time: "11:45 – 12:15"
       kind: talk
-      what: "Kayvon Daie"
+      what: "David Tank"
     - time: "12:15 – 12:45"
       kind: talk
-      what: "Sadra Sadeh"
+      what: "Tristan Geiller"
     - time: "12:45 – 14:00"
       kind: lunch
       what: "Lunch"
     - time: "14:00 – 14:45"
       kind: keynote
-      what: "Rossa Cossart"
+      what: "Hillel Adesnik"
     - time: "14:45 – 15:15"
       kind: talk
-      what: "LinLin Fan"
+      what: "Jonathan Pillow"
     - time: "15:15 – 15:45"
       kind: talk
-      what: "David Tank"
-    - time: "15:45 – 16:05"
+      what: "Ilka Diester"
+    - time: "15:45 – 16:30"
       kind: break
       what: "Coffee"
-    - time: "16:05 – 16:35"
+    - time: "16:30 – 17:00"
       kind: talk
-      what: "Ran Darshan"
-    - time: "16:35 – 17:05"
+      what: "Christopher Harvey"
+    - time: "17:00 – 17:30"
       kind: talk
-      what: "Open slot"
-    - time: "17:05 – 17:15"
-      kind: break
-      what: "Break"
-    - time: "17:15 – 17:45"
+      what: "Benjamin Scholl"
+    - time: "17:30 – 18:00"
       kind: talk
-      what: "Open slot"
-    - time: "17:45 – 18:15"
-      kind: talk
-      what: "Open slot"
-    - time: "18:15"
+      what: "Mark Histed"
+    - time: "18:00"
       kind: break
       what: "Close"

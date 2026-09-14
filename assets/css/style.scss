@@ -269,7 +269,8 @@ code { background: var(--paper-tint); padding: 0.1em 0.35em; border-radius: 4px;
 .slot--keynote .slot__what { font-weight: 600; }
 .slot--break .slot__what,
 .slot--lunch .slot__what,
-.slot--dinner .slot__what { color: var(--ink-soft); font-style: italic; }
+.slot--dinner .slot__what,
+.slot--poster .slot__what { color: var(--ink-soft); font-style: italic; }
 .slot__tag {
   margin-left: 0.5rem;
   padding: 0.08rem 0.45rem;

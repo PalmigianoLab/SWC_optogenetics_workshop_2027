@@ -32,14 +32,14 @@ SECTIONS = {
     "organizers": "organizers",
     "keynote speakers": "keynote",
     "invited speakers": "invited",
+    # A reserve list further down the sheet. Nobody here is published, even when
+    # their invite says yes — they are not part of the twenty invited speakers.
+    "invited speakers (second tier)": "second tier",
     "attendees": "attendees",
 }
 NAME, SURNAME, INSTITUTION, FIELD, CONFIRMED = 0, 1, 6, 8, 12
 
-# Listed under "Invited speakers" in the sheet but giving a keynote. Moving the
-# row in the spreadsheet would be tidier; this is here so the site is right in
-# the meantime.
-AS_KEYNOTE = {"Edvard Moser"}
+AS_KEYNOTE = set()
 
 # Photographs live in assets/img/ as firstname_lastname.jpg. They are matched to
 # people by comparing name words rather than by an exact string, because the
@@ -91,6 +91,8 @@ def parse(text):
             section = SECTIONS[label]
             continue
         name = f"{cell(row, NAME)} {cell(row, SURNAME)}".strip()
+        if name.lower().startswith("total"):
+            continue
         if not name or cell(row, NAME).lower() in ("first name", "name") or section is None:
             continue
         people.append({

@@ -8,15 +8,15 @@ Each full day runs to the same shape:
     11:45  2 talks
     12:45  lunch (75 minutes)
     14:00  keynote (45) + 2 talks
-    15:45  coffee (20)
-    16:05  2 talks
-    17:05  short break (10)
-    17:15  2 talks
-    18:15  close
+    15:45  coffee (40)
+    16:25  3 talks
+    17:55  close
+
+Thursday's talks are followed by a poster session running to 21:00.
 
 Wednesday is an evening only: nothing before 17:00, then registration, a
 keynote and two talks, then dinner. Every slot length comes from the constants
-below, so changing one moves everything after it. Twenty-two talk slots in all.
+below, so changing one moves everything after it. Twenty talk slots in all.
 
 Speakers come from _data/*.yml. The organisers speak too, and some of them have
 to be in a particular half of the day — see FIXED below. Everybody else is
@@ -32,8 +32,8 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-KEYNOTE, TALK, SHORT = 45, 30, 10
-MORNING_COFFEE, AFTERNOON_COFFEE = 30, 20
+KEYNOTE, TALK = 45, 30
+MORNING_COFFEE, AFTERNOON_COFFEE = 30, 45   # 45 puts the posters on 18:00
 REGISTRATION = 30
 
 # Wednesday runs from 17:00 to dinner; the full days break for lunch at a fixed
@@ -41,10 +41,13 @@ REGISTRATION = 30
 WEDNESDAY_START, DINNER = 17 * 60, 19 * 60 + 30
 LUNCH_END = 14 * 60
 
+# One day carries the poster session, which runs from the last talk to 21:00.
+POSTER_DAY, POSTERS_END = "Thursday 1 April", 21 * 60
+
 # Keynotes are placed in this order — Wednesday evening, then Thursday morning,
 # Thursday afternoon, Friday morning, Friday afternoon. Anyone not named here
 # follows in the order the spreadsheet lists them.
-KEYNOTE_ORDER = ["Edvard Moser", "Vivek Jayaraman"]
+KEYNOTE_ORDER = ["Vivek Jayaraman"]
 
 # Organisers who speak, and which half of the day they need.
 FIXED = {
@@ -56,7 +59,7 @@ FIXED = {
 
 # Straight swaps applied after everything else is placed, for the hand
 # adjustments that do not follow from any rule.
-SWAPS = [("Arseny Finkelstein", "Hillel Adesnik")]
+SWAPS = []
 
 
 def people(data):
@@ -138,10 +141,11 @@ def skeleton():
         day.add(AFTERNOON_COFFEE, "break", "Coffee")
         day.add(TALK, "talk", None, "afternoon")
         day.add(TALK, "talk", None, "afternoon")
-        day.add(SHORT, "break", "Break")
         day.add(TALK, "talk", None, "afternoon")
-        day.add(TALK, "talk", None, "afternoon")
-        day.at(day.clock, "break", "Close")
+        if title == POSTER_DAY:
+            day.until(POSTERS_END, "poster", "Poster session")
+        else:
+            day.at(day.clock, "break", "Close")
         days.append((title, day.rows))
 
     return days

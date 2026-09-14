@@ -22,8 +22,8 @@
   field: "Experiment"
   image: rossa-cossart.jpg
   # bio: add a sentence or two here, and the card becomes clickable
-- name: "Edvard Moser"
-  affiliation: ""
+- name: "Hillel Adesnik"
+  affiliation: "Berkeley"
   field: "Experiment"
-  image: edvard_moser.jpg
+  image: hillel_adesnik.jpg
   # bio: add a sentence or two here, and the card becomes clickable
