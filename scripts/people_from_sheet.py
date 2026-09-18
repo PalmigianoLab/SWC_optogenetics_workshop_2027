@@ -2,8 +2,8 @@
 """Build the site's people lists from the planning spreadsheet.
 
 The sheet is an invite tracker, not a guest list: it holds wishlist names,
-internal notes and people who have not answered. Only rows whose "Confirmed
-invite" column starts with "yes" are published — everything else is ignored,
+internal notes and people who have not answered. Only rows whose "Confirmed attendance"
+column starts with "yes" are published — everything else is ignored,
 so nobody appears on the site before they have agreed to come.
 
 Writes _data/organizers.yml and _data/speakers.yml (keynotes first, flagged).
@@ -37,7 +37,31 @@ SECTIONS = {
     "invited speakers (second tier)": "second tier",
     "attendees": "attendees",
 }
-NAME, SURNAME, INSTITUTION, FIELD, CONFIRMED = 0, 1, 6, 8, 12
+# Columns are found by their header, not by position: the sheet gained an
+# "Attending" column in September which shifted everything right and silently
+# emptied the gate. Publishing is decided by "Confirmed attendance" — somebody
+# who accepted the invitation but has not confirmed they are coming does not
+# appear on the site.
+HEADERS = {
+    "first name": "name",
+    "last name": "surname",
+    "institution": "institution",
+    "theory / experiment": "field",
+    "confirmed attendance": "attendance",
+    "confirmed invite": "invite",
+}
+
+
+def find_columns(rows):
+    for row in rows:
+        found = {}
+        for index, value in enumerate(row):
+            key = HEADERS.get(value.strip().lower())
+            if key and key not in found:
+                found[key] = index
+        if "name" in found and "attendance" in found:
+            return found
+    raise SystemExit("Could not find the header row — has the sheet been restructured?")
 
 AS_KEYNOTE = set()
 
@@ -83,23 +107,30 @@ def cell(row, index):
 
 
 def parse(text):
+    rows = list(csv.reader(io.StringIO(text)))
+    columns = find_columns(rows)
+
+    def get(row, key):
+        index = columns.get(key)
+        return cell(row, index) if index is not None else ""
+
     people, section = [], None
-    for row in csv.reader(io.StringIO(text)):
+    for row in rows:
         cells = [c.strip() for c in row]
         label = " ".join(c for c in cells if c).lower()
         if label in SECTIONS:
             section = SECTIONS[label]
             continue
-        name = f"{cell(row, NAME)} {cell(row, SURNAME)}".strip()
+        name = f"{get(row, 'name')} {get(row, 'surname')}".strip()
         if name.lower().startswith("total"):
             continue
-        if not name or cell(row, NAME).lower() in ("first name", "name") or section is None:
+        if not name or get(row, "name").lower() in ("first name", "name") or section is None:
             continue
         people.append({
             "name": " ".join(name.split()),          # the sheet has stray double spaces
-            "institution": cell(row, INSTITUTION),
-            "field": cell(row, FIELD),
-            "confirmed": cell(row, CONFIRMED).lower().startswith("yes"),
+            "institution": get(row, "institution"),
+            "field": get(row, "field"),
+            "confirmed": get(row, "attendance").lower().startswith("yes"),
             "section": section,
         })
     return people
@@ -137,18 +168,31 @@ render.index = None
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--all", action="store_true", help="also print who has not confirmed")
+    parser.add_argument("--allow-stale", action="store_true",
+                        help="keep the committed lists if the sheet cannot be read")
     parser.add_argument("--from-csv", help="read a local CSV instead of fetching")
     args = parser.parse_args()
 
-    people = parse(fetch(args.from_csv))
+    try:
+        people = parse(fetch(args.from_csv))
+    except Exception as error:
+        if args.allow_stale and (ROOT / "_data" / "speakers.yml").exists():
+            print(f"warning: could not read the sheet ({error}); keeping the lists on disk")
+            return
+        raise
+
+    # A sheet that parses but yields nobody is far more likely to be a changed
+    # layout than a real emptying, so refuse rather than publish a blank page.
+    if args.allow_stale and not [p for p in people if p["confirmed"]]:
+        print("warning: the sheet produced no confirmed people; keeping the lists on disk")
+        return
     confirmed = [p for p in people if p["confirmed"]]
 
     organizers = [p for p in confirmed if p["section"] == "organizers"]
-    # Keynotes are listed whether or not the sheet records a reply — Agostina's
-    # call on 26 August 2026. Everyone else still has to have confirmed.
-    keynotes = [p for p in people if p["section"] == "keynote" or p["name"] in AS_KEYNOTE]
-    invited = [p for p in confirmed
-               if p["section"] == "invited" and p["name"] not in AS_KEYNOTE]
+    # Everyone is gated the same way, keynotes included: the page lists people
+    # who have confirmed they are coming, not people who have been invited.
+    keynotes = [p for p in confirmed if p["section"] == "keynote"]
+    invited = [p for p in confirmed if p["section"] == "invited"]
     (ROOT / "_data" / "organizers.yml").write_text(
         render(organizers, "Organisers."), encoding="utf-8")
     (ROOT / "_data" / "keynotes.yml").write_text(

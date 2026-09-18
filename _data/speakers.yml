@@ -2,31 +2,6 @@
 # Only people whose 'Confirmed invite' column says yes appear here.
 # Invited speakers.
 
-- name: "Ran Darshan"
-  affiliation: "Tel Aviv"
-  field: "Theory"
-  image: ran_darshan.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Lea Duncker"
-  affiliation: "Columbia Univ"
-  field: "Theory"
-  image: lea_duncker.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Luca Mazzucato"
-  affiliation: "Oregon"
-  field: "Theory"
-  image: luca_mazzucato.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Yonathan Aljadeff"
-  affiliation: "UCSD"
-  field: "Theory"
-  image: yonathan_aljadeff.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Jonathan Pillow"
-  affiliation: "Princeton"
-  field: "Theory"
-  image: jonathan_pillow.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
 - name: "Eva Naumann"
   affiliation: "Duke"
   field: "Experiment"
@@ -36,51 +11,6 @@
   affiliation: "NYU"
   field: "Experiment"
   image: dima_rinberg.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Ian Oldenburg"
-  affiliation: "Rutgers"
-  field: "Experiment"
-  image: ian_oldenburg.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Bijan Pesaran"
-  affiliation: ""
-  field: "Experiment"
-  image: bijan_pesaran.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Kayvon Daie"
-  affiliation: "Allen"
-  field: "Experiment"
-  image: kayvon_daie.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "LinLin Fan"
-  affiliation: "MIT"
-  field: "Experiment"
-  image: linlin_fan.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "David Tank"
-  affiliation: "Princeton"
-  field: "Experiment"
-  image: david_tank.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Tristan Geiller"
-  affiliation: "Yale"
-  field: "Experiment"
-  image: tristan_geiller.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Ilka Diester"
-  affiliation: "Freiburg"
-  field: "Experiment"
-  image: ilka_diester.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Christopher Harvey"
-  affiliation: "Harward"
-  field: "Experiment"
-  image: christopher_harvey.jpg
-  # bio: add a sentence or two here, and the card becomes clickable
-- name: "Benjamin Scholl"
-  affiliation: "Colorodo"
-  field: "Experiment"
-  image: benjamin_scholl.jpg
   # bio: add a sentence or two here, and the card becomes clickable
 - name: "Mark Histed"
   affiliation: "NIH"
