@@ -14,7 +14,7 @@
                 <td class="slot__time">{{ slot.time }}</td>
                 <td class="slot__what">
                   {{ slot.what }}
-                  {% if slot.kind == "keynote" %}<span class="slot__tag">Keynote</span>{% endif %}
+                  {% if slot.kind == "keynote" and slot.what != "Keynote talk" %}<span class="slot__tag">Keynote</span>{% endif %}
                 </td>
               </tr>
             {% endfor %}

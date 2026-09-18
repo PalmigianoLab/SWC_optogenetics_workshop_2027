@@ -2,15 +2,21 @@
   items:
     - q: Who is the workshop for?
       a: >-
-        Replace with the real answer. Keep answers to a few sentences; anything
-        longer belongs on its own page.
+        Researchers working on two-photon perturbations, from both experiment
+        and theory. It is aimed at people who want to think about how to push
+        systems neuroscience forward: developing the tools to interpret what
+        perturbation experiments actually tell us, and designing experiments and
+        theory together, so that behaviour can be driven optimally and
+        mechanisms genuinely tested.
     - q: Is there a registration fee?
-      a: Replace with the real answer.
+      a: No, there is no registration fee.
+    - q: What is included?
+      a: >-
+        Coffee breaks, lunch, the speakers' dinner, and drinks during the poster
+        session.
+    - q: Can I bring my team?
+      a: >-
+        You can bring one or two or your team members, but we cannot reimburse
+        accomodation for them
     - q: Is accommodation provided?
-      a: Replace with the real answer.
-- group: Application
-  items:
-    - q: What do I need to submit?
-      a: Replace with the real answer.
-    - q: When will I hear back?
-      a: Replace with the real answer.
+      a: We reimburse up to £500 towards accommodation.
