@@ -2,6 +2,11 @@
 # Only people whose 'Confirmed invite' column says yes appear here.
 # Invited speakers.
 
+- name: "Lea Duncker"
+  affiliation: "Columbia Univ"
+  field: "Theory"
+  image: lea_duncker.jpg
+  # bio: add a sentence or two here, and the card becomes clickable
 - name: "Eva Naumann"
   affiliation: "Duke"
   field: "Experiment"
