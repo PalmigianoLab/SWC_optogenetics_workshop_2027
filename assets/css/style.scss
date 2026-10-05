@@ -138,6 +138,16 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.12; m
   text-align: center;
   box-shadow: 0 18px 48px rgba(23, 33, 31, 0.10);
 }
+/* Dates and place, at 70% of the title size below. */
+.hero__dates {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3.64vw, 2.38rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--pine);
+  margin: 0 0 0.9rem;
+}
+.hero__dates span { white-space: nowrap; }
 .hero__card h1 { font-size: clamp(2rem, 5.2vw, 3.4rem); }
 .hero__tagline {
   font-family: var(--display);
